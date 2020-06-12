@@ -1,0 +1,23 @@
+package textSQL;
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class textSQL {
+
+    public static void main(String[] args){
+    	try { Class.forName("D:\\余永胜的文档\\Java程序设计\\mysql-connector-java-8.0.20\\mysql-connector-java-8.0.20.jar") ;  
+    }
+    
+    catch(ClassNotFoundException e){   
+    System.out.println("找不到驱动程序类 ，加载驱动失败！");   
+    e.printStackTrace() ;   
+    }
+}
+}

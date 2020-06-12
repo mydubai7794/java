@@ -1,0 +1,33 @@
+package textSQL;
+
+
+import java.sql.DriverManager;
+ 
+import com.mysql.cj.jdbc.Connection;
+ 
+public class DbUtil {
+	private String dbUrl = "jdbc:mysql://localhost:3306/work?useSSL=false";
+	private String dbUserName = "root";
+	private String dbPassword = "123456";
+	private String jdbcName = "com.mysql.jdbc.Driver";
+ 
+	/*
+	 * 数据库连接
+	 */
+	public Connection getCon() throws Exception {
+		Class.forName(jdbcName);
+		Connection con = (Connection) DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
+		return con;
+	}
+	
+	public static void main(String[] args) {
+		DbUtil dbUtil = new DbUtil();
+		try {
+			dbUtil.getCon();
+			System.out.println("数据库连接成功");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("数据库连接失败");
+		}
+	}
+}

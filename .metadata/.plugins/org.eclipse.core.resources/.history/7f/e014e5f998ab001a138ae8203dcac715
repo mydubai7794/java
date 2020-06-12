@@ -1,0 +1,7 @@
+package response;
+
+public class closeThisPage {
+      public static void closethis(page) {
+		page.dispose();
+	}
+}

@@ -1,0 +1,10 @@
+package SignupLogin;
+import SignUp;
+
+public interface UserLogIn {
+	public abstract boolean isLogin(String name,String mima);
+	
+}
+public abstract void regist(User user) {
+	
+}

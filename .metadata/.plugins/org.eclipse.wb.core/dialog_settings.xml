@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.core.editor.errors.report2.CreateReportDialog">
+		<item key="x" value="540"/>
+		<item key="y" value="344"/>
+		<item key="width" value="788"/>
+		<item key="height" value="450"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.model.property.order.ReorderDialog">
+		<item key="x" value="575"/>
+		<item key="y" value="229"/>
+		<item key="width" value="769"/>
+		<item key="height" value="561"/>
+	</section>
+</section>

@@ -1,0 +1,24 @@
+package response;
+
+public class 片段 {
+	public static void main(String[] args) {
+		
+		package cn.com.swing;
+		import java.awt.Color;
+		import java.awt.Dimension;
+		import java.awt.Font;
+		import java.awt.event.ActionEvent;
+		import java.awt.event.ActionListener;
+		 
+		import javax.swing.ImageIcon;
+		import javax.swing.JFrame;
+		import javax.swing.JLabel;
+		import javax.swing.JMenu;
+		import javax.swing.JMenuBar;
+		
+		————————————————
+		版权声明：本文为CSDN博主「我相信慢思考的力量」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+		原文链接：https://blog.csdn.net/qq_37591637/article/details/86554250
+	}
+}
+
