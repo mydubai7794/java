@@ -1,0 +1,10 @@
+package SignupLogin;
+
+import textSQL.addUserPassword;
+
+public class signUser {
+	public static void main(String[] args) {
+		addUserPassword adduser = new addUserPassword();
+	}
+
+}

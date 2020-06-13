@@ -6,12 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import GraIterface.userGraIterface;
 
 public class verification {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException  {
+    public void verifications(String userName,String password) throws ClassNotFoundException, SQLException  {
         String URL="jdbc:mysql://127.0.0.1:3306/new_schema?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT";
         String USER="dubai";
         String PASSWORD="qq2572891795";
@@ -23,14 +27,17 @@ public class verification {
         String s="select user_name,user_password from user where user_name=? and user_password=?";
         PreparedStatement pst=conn.prepareStatement(s);
 
-        pst.setString(1, "xiaoshuai1");
-        pst.setString(2, "mima");
+        pst.setString(1, userName);
+        pst.setString(2, password);
         ResultSet rs=pst.executeQuery();
         //4.处理数据库的返回结果(使用ResultSet类)
-        while(rs.next()){
-           System.out.println(rs.getString("user_name")+" "
-                          +rs.getString("user_password"));
-        }        
+        if(rs.next()){
+        	userGraIterface user = new userGraIterface();
+        	user.setVisible(true);
+        }
+        else {
+        	JOptionPane.showMessageDialog(null, "未找到该用户");
+        }
         //关闭资源
         rs.close();
         pst.close();

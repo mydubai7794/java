@@ -46,11 +46,6 @@ public class userGraIterface extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("\u501F\u4E66");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
 		btnNewButton.setBounds(30, 42, 132, 51);
 		contentPane.add(btnNewButton);
 
@@ -67,8 +62,6 @@ public class userGraIterface extends JFrame {
 		btnNewButton_3.setBounds(100, 186, 181, 50);
 		contentPane.add(btnNewButton_3);
 	}
-	public static void closeThis() {
-		userGraIterface.dispose();
-	}
+
 
 }
