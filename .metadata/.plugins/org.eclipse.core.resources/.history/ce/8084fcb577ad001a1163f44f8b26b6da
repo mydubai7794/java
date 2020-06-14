@@ -1,0 +1,8 @@
+package bookConten;
+
+public class changeBook extends addBook{
+	String theTitle="11";
+	String theWord="3243";
+
+
+}

@@ -2,15 +2,23 @@ package GraIterface;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.TextField;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import bookSQL.modSQL;
+import bookSQL.searchSQL;
+import textSQL.searchPrint;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import java.awt.TextArea;
 
 public class usersearch extends JFrame {
 
@@ -35,8 +43,10 @@ public class usersearch extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws SQLException 
+	 * @throws ClassNotFoundException 
 	 */
-	public usersearch() {
+	public usersearch() throws ClassNotFoundException, SQLException {
 		setTitle("\u4F60\u597D\uFF0C\u501F\u9605\u4EBA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -49,13 +59,63 @@ public class usersearch extends JFrame {
 		textField.setBounds(10, 10, 306, 30);
 		contentPane.add(textField);
 		textField.setColumns(10);
+
 		
-		JButton btnNewButton = new JButton("\u56FE\u4E66\u68C0\u7D22");
-		btnNewButton.setBounds(337, 9, 89, 30);
-		contentPane.add(btnNewButton);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 50, 416, 203);
+		final TextArea textArea = new TextArea();
+		textArea.setBounds(0, 46, 436, 217);
 		contentPane.add(textArea);
+		searchPrint search = new searchPrint();
+		StringBuffer buffer = new StringBuffer();
+		int n = 3;
+		
+
+		for(int i=0;i<=n;i++) {
+			buffer.append(search.returnGroup(i));
+			
+			textArea.setText(buffer.toString());
+		}
+
+//检索按钮-----------------------------------------------------------------------		
+				JButton btnNewButton = new JButton("\u56FE\u4E66\u68C0\u7D22");
+				btnNewButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//得到文本
+						String userName=textField.getText();
+						
+						
+						//调用数据库比对
+						searchSQL search = new searchSQL();
+						try {
+							
+							StringBuffer buffer = new StringBuffer();
+							buffer.append(search.returnGroup(3, userName));
+							textArea.setText(buffer.toString());
+						} catch (ClassNotFoundException e1) {
+							// TODO 自动生成的 catch 块
+							e1.printStackTrace();
+						} catch (SQLException e1) {
+							// TODO 自动生成的 catch 块
+							e1.printStackTrace();
+						}
+						
+						//循环打印
+					}
+				});
+				btnNewButton.setBounds(337, 9, 89, 30);
+				contentPane.add(btnNewButton);
+/*		try {
+			for(int i=0;i<=search.returnGroup().length;i++){
+				buffer.append(search.returnGroup());
+				}
+		} catch (ClassNotFoundException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+
+			e1.printStackTrace();
+		}
+		textField_1.setText(buffer.toString());
+		
+*/		
 	}
 }

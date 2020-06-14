@@ -21,7 +21,7 @@ public class addUserPassword {
         //2.获得数据库链接
         Connection conn=DriverManager.getConnection(URL, USER, PASSWORD);
         //3.通过数据库的连接操作数据库，实现增删改查（使用Statement类）
-        String s="insert into user(user_name,user_password,grade) values(?,?,1)";
+        String s="insert into user(user_name,user_password) values(?,?)";
         PreparedStatement pst=conn.prepareStatement(s);
 
         pst.setString(1, user_name);

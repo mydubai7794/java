@@ -1,0 +1,10 @@
+package bookSQL;
+
+public class changeBook extends addBook {
+     public void addBook(){
+    	 System.out.println("¼Ì³Ð");
+     }
+     void addbook() {
+    	 System.out.println("×Ô´øµÄ");
+     }
+}

@@ -1,0 +1,52 @@
+package picture;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+class BackgroundPanel extends JPanel {
+	 
+	private static final long serialVersionUID = 1L;
+	String name = "D:\\余永胜的文档\\Java程序设计\\book\\src\\picture\\background.jpg"; // 将图片放在class类的同级文件夹里
+ 
+	protected void paintComponent(Graphics g) { //关键代码：重写绘制组件外观
+		super.paintComponent(g);
+		ImageIcon image = new ImageIcon(getClass().getResource(name)); // 获取图片路径
+		g.drawImage(image.getImage(), 0, 0, 350, 350, null);// 绘制图片与组件大小相同
+	}
+}
+ 
+public class BackgroundPanelClass extends JFrame {
+	private static final long serialVersionUID = 1L;
+	JPanel contentPan; // 放背景面板的面板
+ 
+	public BackgroundPanelClass() {
+		this.setTitle("自定义背景图片");
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setBounds(400, 250, 350, 350);
+ 
+		contentPan = new JPanel();
+		contentPan.setLayout(new BorderLayout(0, 0));// 设置边界布局
+		BackgroundPanel backgroundPanel = new BackgroundPanel(); // 创建背景面板
+		contentPan.add(backgroundPanel);// 添加背景面板
+ 
+		this.setContentPane(contentPan);
+ 
+	}
+ 
+	public static void main(String[] args) {
+		new BackgroundPanelClass();
+	}
+ 
+}

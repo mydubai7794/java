@@ -7,9 +7,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 
 import javax.swing.JTextField;
@@ -45,9 +51,20 @@ public class land extends JFrame {
 	 * Create the frame.
 	 */
 	public land() {
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+		    @Override
+		    public void windowClosing(WindowEvent e) {
+		        int result = JOptionPane.showConfirmDialog(null, "确认退出?", "确认",JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE);
+		        if (result == JOptionPane.OK_OPTION) {
+			        // 退出
+		            System.exit(0);
+		        }
+		    }
+		});
 		setTitle("\u56FE\u4E66\u7BA1\u7406\u7CFB\u7EDF\u767B\u9646\u754C\u9762");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(200, 100, 450, 370);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -77,9 +94,9 @@ public class land extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String userName=textField.getText();
-				System.out.println(userName);
+
 				String password=new String(passwordField.getPassword());
-				System.out.println(password);
+				
 				verification vervy = new verification();
 				try {
 					verification ver = new verification();
@@ -95,10 +112,6 @@ public class land extends JFrame {
 		});
 		btnNewButton.setBounds(58, 179, 128, 43);
 		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("\u5168\u5C4F");
-		btnNewButton_1.setBounds(358, 10, 68, 43);
-		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\u6CE8\u518C");
 //注册事件
@@ -133,5 +146,15 @@ public class land extends JFrame {
 		});
 		btnNewButton_2.setBounds(265, 179, 128, 43);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_2 = new JLabel("\u6CE8\u610F\uFF1A\u6CE8\u518C\u53EA\u80FD\u6CE8\u518C\u501F\u9605\u8005\u8EAB\u4EFD");
+		lblNewLabel_2.setBounds(10, 233, 436, 43);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("\u6B32\u6210\u4E3A\u56FE\u4E66\u7BA1\u7406\u5458\u6216\u7528\u6237\u7BA1\u7406\u5458\uFF0C\u8BF7\u8054\u7CFB\u7528\u6237\u7BA1\u7406\u5458");
+		lblNewLabel_3.setBounds(10, 261, 359, 37);
+		contentPane.add(lblNewLabel_3);
+		
+		
 	}
 }

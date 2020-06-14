@@ -2,4 +2,28 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="GraIterface.userGraIterface"/>
+    <fullyQualifiedTypeName name="javax.swing.JLayeredPane"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="GraIterface.userAdmin"/>
+    <fullyQualifiedTypeName name="java.io.Reader"/>
+    <fullyQualifiedTypeName name="GraIterface.bookAdmin"/>
+    <fullyQualifiedTypeName name="textSQL.addUser"/>
+    <fullyQualifiedTypeName name="textSQL.deleteRow"/>
+    <fullyQualifiedTypeName name="textSQL.updateUser"/>
+    <fullyQualifiedTypeName name="bookSQL.connectSQL"/>
+    <fullyQualifiedTypeName name="GraIterface.adminAddUser"/>
+    <fullyQualifiedTypeName name="bookConten.changeBook"/>
+    <fullyQualifiedTypeName name="bookConten.addBook"/>
+    <fullyQualifiedTypeName name="bookConten.deleteBook"/>
+    <fullyQualifiedTypeName name="bookConten.addCatalog"/>
+    <fullyQualifiedTypeName name="bookConten.changeCatalog"/>
+    <fullyQualifiedTypeName name="bookConten.deleteCatalog"/>
+    <fullyQualifiedTypeName name="bookSQL.modSQL"/>
+    <fullyQualifiedTypeName name="textSQL.searchPrint"/>
+    <fullyQualifiedTypeName name="java.awt.TextField"/>
+    <fullyQualifiedTypeName name="bookSQL.searchSQL"/>
+    <fullyQualifiedTypeName name="textSQL.bbook"/>
+    <fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
+    <fullyQualifiedTypeName name="java.awt.event.WindowEvent"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class deleteRow {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException  {
+    public static void deleterow(String userName,String password,String identity) throws ClassNotFoundException, SQLException  {
     	String URL="jdbc:mysql://127.0.0.1:3306/new_schema?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT";
         String USER="dubai";
         String PASSWORD="qq2572891795";
@@ -21,11 +21,12 @@ public class deleteRow {
         //2.获得数据库链接
         Connection conn=DriverManager.getConnection(URL, USER, PASSWORD);
         //3.通过数据库的连接操作数据库，实现增删改查（使用Statement类）
-        String s="delete from user where id=2 and user_name=? and user_password=?";
+        String s="delete from user where user_name=? and user_password=? and identity=?";
         PreparedStatement pst=conn.prepareStatement(s);
 
-        pst.setString(1, "xiaoshuai1");
-        pst.setString(2, "mima");
+        pst.setString(1, userName);
+        pst.setString(2, password);
+        pst.setString(3, identity);
 
         pst.execute();
         //关闭资源
